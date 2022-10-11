@@ -25,7 +25,11 @@ const run = async (inputs: Array<string>) => {
     console.log('proof', params.map((p) => JSON.stringify(p)).join(","))    
 }
 
-const inputs: Array<string> = ["1", "2", "3", "4"]
+/*
+ the first 4 parameters are used to verify the hash
+ the last parameter can be anything. If allows to avoid double sending the same proof.
+*/
+const inputs: Array<string> = ["0", "0", "0", "0", "123"]
 
 run(inputs)
 .then((e: any) => console.log(e))
