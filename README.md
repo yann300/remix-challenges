@@ -3,11 +3,13 @@
  The goal is to propose a challenge, to submit this challeng onchain without actually revealing the solution of the challenge.
 
   - why not just code the challenge in solidity?
+  
  All the datas in the ethereum blockchain are public and visible. This means that if the challenge is coded in solidity, the first user who find the solution will post that solution in a transaction and thus the solution will be visible by everyone.
 
  Using zk proof we only require the user to post a proof that the challenge is successfully completed.
 
   - is it possible to double post the same proof?
+  
  There is a special parameter named `nullifier`.
  If user A complete the challenge with the nullifier being "142" and a certain proof 1, the smart contract will remember that the nullifier `142` has been consumed.
  So even when the actual proof becomes public, it won't be possible to repost again that proof. 
