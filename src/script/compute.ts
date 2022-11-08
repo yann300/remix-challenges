@@ -23,7 +23,9 @@ const run = async (inputs: Array<string>) => {
     let result = zokratesProvider.generateProof(artifacts.program, witness, keypair.pk)
     let params = zokratesProvider.utils.formatProof(result)
 
-    console.log('proof', params.map((p) => JSON.stringify(p)).join(","))    
+    params = params.map((p) => JSON.stringify(p)).join(",")
+    console.log('proof', params)
+    remix.call('fileManager', 'writeFile', './generated/proof.json', JSON.stringify(params))
 }
 
 /*
