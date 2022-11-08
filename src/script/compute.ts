@@ -1,4 +1,5 @@
 import { initialize } from 'zokrates-js'
+import { normalize } from './utils'
 
 const run = async (inputs: Array<string>) => {
     console.log('init...')
@@ -29,7 +30,18 @@ const run = async (inputs: Array<string>) => {
  the first 4 parameters are used to verify the hash
  the last parameter can be anything. If allows to avoid double sending the same proof.
 */
-const inputs: Array<string> = ["0", "0", "0", "0", "123"]
+const nullifier = "123" // random, please update this value.
+
+// please use the value provided be the challenge
+const hash_a = ""
+const hash_b = ""
+
+const message_1 = normalize("")
+const message_2 = normalize("")
+const message_3 = normalize("")
+const message_4 = normalize("")
+
+const inputs: Array<string> = [message_1, message_2, message_3, message_4, hash_a, hash_b, nullifier]
 
 run(inputs)
 .then((e: any) => console.log(e))

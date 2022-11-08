@@ -64,6 +64,11 @@
 						"internalType": "struct Verifier.Proof",
 						"name": "proof",
 						"type": "tuple"
+					},
+					{
+						"internalType": "uint256[3]",
+						"name": "input",
+						"type": "uint256[3]"
 					}
 				],
 				"name": "verifyTx",
@@ -93,23 +98,23 @@
 		"compilationTarget": {
 			"contracts/verifier.sol": "Verifier"
 		},
-		"evmVersion": "london",
+		"evmVersion": "byzantium",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"contracts/verifier.sol": {
-			"keccak256": "0x64125beff2db338a83ebf874c8dd6c2d12443b4f4d88bd64a4240f4478454a39",
+			"keccak256": "0xf3558da6777e54b00a9bea2aa8d018efa5068078e693dd509a5559a7c43016d7",
 			"urls": [
-				"bzz-raw://1a0547254aa0ba7596253db2e4aac8b716bf68862ff256b5f7bdb724ad842adc",
-				"dweb:/ipfs/QmTQxSyi7G6G9qKqhZMp3hgs15nCiF7aoNEKz8PruHW1eF"
+				"bzz-raw://98cc608c988c966d99c0065ee103e84ae9114cf5a71474429af3b66554fa333f",
+				"dweb:/ipfs/QmZrhPN33cPKbgcbroUqtryPQXdxa3zcPP6J4yZVZWxKyB"
 			]
 		}
 	},
