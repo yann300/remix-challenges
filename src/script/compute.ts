@@ -27,10 +27,12 @@ const run = async (inputs: Array<string>) => {
 }
 
 /*
+ nullifier is a ramdom value. Please put in any number. It is used to avoid double spending the proof.
+ hash_a and hasb_b are provided during the game session.
  the first 4 parameters are used to verify the hash
- the last parameter can be anything. If allows to avoid double sending the same proof.
+ message_1 to message_4 are the solution of the game.
 */
-const nullifier = "123" // random, please update this value.
+const nullifier = "42" // random, please update this value.
 
 // please use the value provided be the challenge
 const hash_a = ""
