@@ -8,14 +8,14 @@ async function main() {
         // "signer" represents the current selected account and provider.
         const signer = (new ethers.providers.Web3Provider(web3Provider)).getSigner()
 
-        const abi = await remix.call('fileManager', 'readFile', 'src/script/contract-rewards.abi')
+        const abi = await remix.call('fileManager', 'readFile', 'script/contract-rewards.abi')
         
         // we finally use the address, the contract interfact and the current context (provider and account)
         // to instantiate an ethers.Contract object.
         let contract = new ethers.Contract(address, JSON.parse(abi), signer);
 
         const proof = JSON.parse(await remix.call('fileManager', 'readFile', './generated/proof.json'))
-        const txSafeMint = await contract.publishChallenge(proof)
+        const txSafeMint = await contract.publishChallenge(proof[0], proof[1])
         
         // this wait for the transaction to be mined.
         const result = await txSafeMint.wait()
