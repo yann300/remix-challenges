@@ -1,0 +1,122 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "X",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "Y",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct Pairing.G1Point",
+								"name": "a",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256[2]",
+										"name": "X",
+										"type": "uint256[2]"
+									},
+									{
+										"internalType": "uint256[2]",
+										"name": "Y",
+										"type": "uint256[2]"
+									}
+								],
+								"internalType": "struct Pairing.G2Point",
+								"name": "b",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "X",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "Y",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct Pairing.G1Point",
+								"name": "c",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct Verifier.Proof",
+						"name": "proof",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256[3]",
+						"name": "input",
+						"type": "uint256[3]"
+					}
+				],
+				"name": "verifyTx",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "r",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/artifacts/verifier.sol": "Verifier"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/artifacts/verifier.sol": {
+			"keccak256": "0x7a5bd48b9f5d28ce6f8f223ab19a671cf49a4627910a5b2b515a258d9d83bd75",
+			"urls": [
+				"bzz-raw://12ba097c8e5957d16593834052650b5b580807a21d6e17e10509fbe053283e74",
+				"dweb:/ipfs/QmYzPPBy9x2UHUkkEd8txBJcx1fDhhXHXxVTwCSzsWuLTn"
+			]
+		}
+	},
+	"version": 1
+}
