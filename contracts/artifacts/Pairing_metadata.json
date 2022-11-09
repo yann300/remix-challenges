@@ -20,23 +20,23 @@
 		"compilationTarget": {
 			"contracts/verifier.sol": "Pairing"
 		},
-		"evmVersion": "byzantium",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"contracts/verifier.sol": {
-			"keccak256": "0xf3558da6777e54b00a9bea2aa8d018efa5068078e693dd509a5559a7c43016d7",
+			"keccak256": "0x5eabec088bf63f5fa39530ea9c728ec2707db49cd988b2a9fbd7d5f006c25a8b",
 			"urls": [
-				"bzz-raw://98cc608c988c966d99c0065ee103e84ae9114cf5a71474429af3b66554fa333f",
-				"dweb:/ipfs/QmZrhPN33cPKbgcbroUqtryPQXdxa3zcPP6J4yZVZWxKyB"
+				"bzz-raw://7c4aec870a04ed6c1ad0cf94f6d39771e9ca8eece23f54655d761ccb96e23f81",
+				"dweb:/ipfs/QmfYiXmo5fXKjQzgtA1KfbB1J6Y3QnhmFqzSbW7yTZSQ9C"
 			]
 		}
 	},
