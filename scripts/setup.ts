@@ -5,7 +5,7 @@ const run = async () => {
     const zokratesProvider = await initialize()
 
     // recompiling
-    const source = await remix.call('fileManager', 'readFile', './src/zokrates/main.zok')
+    const source = await remix.call('fileManager', 'readFile', './zokrates/main.zok')
 
     // compilation
     const artifacts = zokratesProvider.compile(source);
@@ -27,5 +27,4 @@ const run = async () => {
 }
 
 run()
-.then((e: any) => console.log(e))
-.catch((e: any) => console.error(e))
+.catch((e: any) => console.error(e.message))
