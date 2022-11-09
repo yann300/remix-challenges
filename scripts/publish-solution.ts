@@ -3,7 +3,7 @@ import { ethers } from 'ethers'
 async function main() {
     try {        
         // rewards contract on Optimism.
-        const address = "0xE53B6E4729221106d4d532033b30Df25E6a2f6cE"
+        const address = "0x5d470270e889b61c08C51784cDC73442c4554011"
 
         // "signer" represents the current selected account and provider.
         const signer = (new ethers.providers.Web3Provider(web3Provider)).getSigner()
