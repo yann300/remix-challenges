@@ -38,10 +38,10 @@
 
  ## Mint a remixer using the generated proof
 
- - switch to Optimism
- - see the file scripts/remixerMint.ts
- - in this script set the Proof from the previous step and run the script
- - if the proof is valid, a remixer badge will be minted to your address
+ - switch to the Optimism network
+ - open the file scripts/publish-solution.ts
+ - this call use the proof generated in the previous step `proof.json` for calling the function `publishChallenge` from the remix rewards contract.
+ - run the transaction for publishing the solution.
 
 
 
