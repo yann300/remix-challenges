@@ -1,5 +1,5 @@
 import { initialize } from 'zokrates-js'
-import { normalize } from './utils'
+import { normalize, pack } from './utils'
 
 const run = async (inputs: Array<string>) => {
     console.log('init...')
@@ -13,7 +13,17 @@ const run = async (inputs: Array<string>) => {
 
     console.log('compute program...')
     // computation
-    const { witness } = zokratesProvider.computeWitness(artifacts, inputs);
+
+    let witness
+    try {
+        let compute  = zokratesProvider.computeWitness(artifacts, inputs);
+        witness = compute.witness
+    } catch (e) {
+        console.log(e)
+        console.log("assertion failed, hashes don't correspond")
+        return
+    }
+    
 
     // retrieve the verification key
     const keypair = JSON.parse(await remix.call('fileManager', 'readFile', './generated/keypair.json'))
@@ -44,9 +54,8 @@ const message_1 = normalize("")
 const message_2 = normalize("")
 const message_3 = normalize("")
 const message_4 = normalize("")
-
-const inputs: Array<string> = [message_1, message_2, message_3, message_4, hash_a, hash_b, nullifier]
+const input = pack(message_1 + message_2 + message_3 + message_4)
+const inputs: Array<string> = input.concat([hash_a, hash_b, nullifier])
 
 run(inputs)
-.then((e: any) => console.log(e))
-.catch((e: any) => console.error(e))
+.catch((e: any) => console.error(e.message))
