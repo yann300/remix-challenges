@@ -18,7 +18,6 @@ export const pack = (value: string) => {
     const hex = ethers.utils.sha256(ethers.utils.toUtf8Bytes(value))
     let num = ethers.BigNumber.from(hex)
     num = num.toString()
-    console.log(num)
     const length = num.length / 4
     return [num.substr(0, length), num.substr(length, length), num.substr(2 * length - 1, length), num.substr(3 * length - 1)]
 }

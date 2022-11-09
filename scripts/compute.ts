@@ -33,9 +33,9 @@ const run = async (inputs: Array<string>) => {
     let result = zokratesProvider.generateProof(artifacts.program, witness, keypair.pk)
     let params = zokratesProvider.utils.formatProof(result)
 
-    params = params.map((p) => JSON.stringify(p)).join(",")
+    params = '[' + params.map((p) => JSON.stringify(p)).join(",") + ']'
     console.log('proof', params)
-    remix.call('fileManager', 'writeFile', './generated/proof.json', JSON.stringify(params))
+    remix.call('fileManager', 'writeFile', './generated/proof.json', params)
 }
 
 /*
@@ -47,13 +47,13 @@ const run = async (inputs: Array<string>) => {
 const nullifier = "42" // random, please update this value.
 
 // please use the value provided be the challenge
-const hash_a = ""
-const hash_b = ""
+const hash_a = "281969979063453985172741380982846584566"
+const hash_b = "88422393177988462612949727007266787516"
 
-const message_1 = normalize("")
-const message_2 = normalize("")
-const message_3 = normalize("")
-const message_4 = normalize("")
+const message_1 = normalize(0)
+const message_2 = normalize("0x33624883795aacf3edd460c4ab80f147011266f6c0eabd9d8c6144d2ccf241d0")
+const message_3 = normalize("maurice")
+const message_4 = normalize("mve")
 const input = pack(message_1 + message_2 + message_3 + message_4)
 const inputs: Array<string> = input.concat([hash_a, hash_b, nullifier])
 
