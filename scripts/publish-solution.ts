@@ -15,8 +15,9 @@ async function main() {
         let contract = new ethers.Contract(address, JSON.parse(abi), signer);
 
         const proof = JSON.parse(await remix.call('fileManager', 'readFile', './generated/proof.json'))
-        console.log("oo")
+        
         console.log(proof)
+        console.log('publishing the solution...')
         const txSafeMint = await contract.publishChallenge(proof[0], proof[1])
         
         // this wait for the transaction to be mined.
