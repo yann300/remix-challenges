@@ -26,10 +26,7 @@
  
  ## Completing the challenge
 
- - install remixd by running `npm i @remix-project/remixd` . it allows to share a local folder with remix.
  - clone the following repository: `git clone https://github.com/yann300/remix-challenges`
- - go to that folder and run `remixd`
- - open https://remix.ethereum.org and select "Connect to localhost"
  - open the file './src/script/compute.ts'
  - choose value for inputs and run the script
  - if the program execute correctly this means that you successfully found the 4 messages.

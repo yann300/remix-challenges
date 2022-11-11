@@ -17,6 +17,7 @@ async function main() {
         const proof = JSON.parse(await remix.call('fileManager', 'readFile', './generated/proof.json'))
         
         console.log(proof)
+        console.log('publishing the solution...')
         const txSafeMint = await contract.publishChallenge(proof[0], proof[1])
         
         // this wait for the transaction to be mined.
