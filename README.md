@@ -30,7 +30,7 @@
  - open the file './src/script/compute.ts'.
  - choose value for the inputs and run the script.
  - if the program execute correctly this means that you successfully found the 4 answers.
- - this will also log a proof in the terminal.
+ - this will also log a proof in the terminal and will save it in a file in the folder named **generated**.
  - this proof can be used in a verifier to prove that you found the 4 values. By doing so, only the proof needs to be shared, you then don't need to share the 4 values, but everyone can be certain that you know these values.
  - go to the next steps.
 
