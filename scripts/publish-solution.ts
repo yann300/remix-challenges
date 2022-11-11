@@ -24,6 +24,8 @@ async function main() {
         const result = await txSafeMint.wait()
 
         console.log(result)
+
+        console.log('the solution has been published. Please head to https://rewards.remix.ethereum.eth.limo to see the newly created badge.')
     } catch (e) {
         console.error(e.message)
     }    
