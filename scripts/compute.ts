@@ -46,9 +46,9 @@ const run = async (inputs: Array<string>) => {
 */
 const nullifier = "42" // random, please update this value.
 
-// please use the value provided by the challenge
-const hash_a = ""
-const hash_b = ""
+// the hashes a & b are the split hashes of the correct answers
+const hash_a = "116575509912205036097134680835176937883"
+const hash_b = "58593660297307654186580201841686965660"
 
 const question_1 = normalize("")
 const question_2 = normalize("")
