@@ -1,28 +1,28 @@
-  ## Introduction
+## Introduction
 
- The goal is to propose a challenge, to submit this challeng onchain without actually revealing the solution of the challenge.
+ Remix Challenges is an onchain quiz that uses a zk proof.  People submitting their answers won't reveal their solutions.
 
-  - why not just code the challenge in solidity?
+  - Why not just code the challenge in Solidity?
   
- All the datas in the ethereum blockchain are public and visible. This means that if the challenge is coded in solidity, the first user who find the solution will post that solution in a transaction and thus the solution will be visible by everyone.
+ All the data in the Ethereum blockchain is public and visible. This means that if the challenge is coded in Solidity, the first user who finds the solution will submit that solution in **a transaction** and thus the solution will be visible by everyone.
 
- Using zk proof we only require the user to post a proof that the challenge is successfully completed.
+ Using zk proof, we only require the user post a proof that the challenge has been successfully completed.
 
-  - is it possible to double post the same proof?
-  
- There is a special parameter named `nullifier`.
- If user A complete the challenge with the nullifier being "142" and a certain proof 1, the smart contract will remember that the nullifier `142` has been consumed.
- So even when the actual proof becomes public, it won't be possible to repost again that proof. 
- If another user want to post the proof 1 with another nullifier (let's say 143), this won't work because the proof 1 is intrinsincly associated with the nullifier "142".
- This other user needs then to recompute a proof and specify 143 for the nullifier.
+  - Is it possible to double post the same proof?
 
-  - if an user knows how to complete a challenge he can compute with another salt and win the game again?
+There are 2 parts to this question - can the same person (address) post the same proof?  And can a different address post the same proof?
 
- For fixing this issue, we need, in the contract, to keep a mapping of all the users that completed the challenge (using `msg.sender`), it is also possible to ask for a signed nullifier instead of directly using `msg.sender`
- 
- ## Trusted Setup
- 
- TODO
+Incorporated in the proof is a special parameter named `nullifier` - a number that a user chooses and inputs when generating the proof. Inputting a different nullifier with the correct answers will generate a different proof.
+
+If a user correctly answers the questions and uses "142 as the nullifier when generating the proof, the smart contract will remember that the nullifier `142` has been used.  If another number is used, the proof will be different but will still show that the questions were correctly answered.
+
+ So even when the actual proof becomes public, it won't be possible to re-post that specific proof.  
+
+ An address (a user) can only submit a single proof - even if another `nullifier` is used.  And a `nullifier` can only be used once.
+
+  - If a user knows how to complete a challenge, can he compute with another salt and win the game again?
+
+The contract keeps a mapping of all the users that completed the challenge (using `msg.sender`), it is also possible to ask for a signed nullifier instead of directly using `msg.sender`
  
  ## Completing the challenge
 
