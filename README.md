@@ -26,7 +26,7 @@
  
  ## Completing the challenge
 
- - clone the following repository in remix `git clone https://github.com/yann300/remix-challenges` .
+ - clone the following repository in remix `https://github.com/yann300/remix-challenges` .
  - open the file './src/script/compute.ts'.
  - choose value for the inputs and run the script.
  - if the program execute correctly this means that you successfully found the 4 answers.
