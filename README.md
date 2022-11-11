@@ -26,19 +26,21 @@
  
  ## Completing the challenge
 
- - clone the following repository: `git clone https://github.com/yann300/remix-challenges`
- - open the file './src/script/compute.ts'
- - choose value for inputs and run the script
- - if the program execute correctly this means that you successfully found the 4 messages.
+ - clone the following repository in remix `git clone https://github.com/yann300/remix-challenges` .
+ - open the file './src/script/compute.ts'.
+ - choose value for the inputs and run the script.
+ - if the program execute correctly this means that you successfully found the 4 answers.
  - this will also log a proof in the terminal.
  - this proof can be used in a verifier to prove that you found the 4 values. By doing so, only the proof needs to be shared, you then don't need to share the 4 values, but everyone can be certain that you know these values.
+ - go to the next steps.
 
  ## Mint a remixer using the generated proof
 
- - switch to the Optimism network
- - open the file scripts/publish-solution.ts
+ - switch to the Optimism network.
+ - open the file scripts/publish-solution.ts.
  - this call use the proof generated in the previous step `proof.json` for calling the function `publishChallenge` from the remix rewards contract.
  - run the transaction for publishing the solution.
+ - once the solution has been published head to https://rewards.remix.ethereum.eth.limo to see the newly created badge.
 
 
 
