@@ -28,17 +28,18 @@ The contract keeps a mapping of all the users that completed the challenge (usin
 
  - Clone the following repository in Remix `https://github.com/yann300/remix-challenges` .
  - Open the file './src/script/compute.ts'.
- - Choose value for the inputs and run the script.
- - If the program execute correctly this means that you successfully found the 4 answers.
- - This will also log a proof in the terminal and will save it in a file in the folder named **generated**.
- - This proof can be used in a verifier to prove that you found the 4 values. By doing so, only the proof needs to be shared, you then don't need to share the 4 values, but everyone can be certain that you know these values.
+ - Choose value for the inputs and run the script. (To run it either Rt click on the script in the File Explorer or click the green play button)
+ - If the program executes correctly, you successfully found the 4 answers.
+ - In Remix's terminal, you'll see log a proof.  The script will save this proof in a file in the folder named **generated**.
+ - If you have not answered the questions correctly, the proof will NOT be generated (and the file `generated/proof.json` will not be created.
+ - This proof can be used in a verifier to prove that you found the 4 values. By doing so, only the proof needs to be shared, you don't need to share the 4 values, but everyone can be certain that you know these values.
  - Go to the next steps.
 
  ## Mint a Remixer Badge using the generated proof
 
- - Switch to the Optimism network.
+ - Switch to the Optimism network. (Make sure in the Deploy & Run you are connected to Optimism and that your browser wallet (often MetaMask) is also coneected there).
  - Open the file scripts/publish-solution.ts.
- - This call use the proof generated in the previous step `proof.json` for calling the function `publishChallenge` from the Remix Rewards contract.
+ - This script will use the proof generated in the previous section `generated/proof.json` for calling the function `publishChallenge` in the Remix Rewards contract.
  - Run the transaction for publishing the solution.
  - Once the solution has been published head to https://rewards.remix.ethereum.eth.limo to see the newly created badge.
 
