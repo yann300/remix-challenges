@@ -37,7 +37,7 @@ The contract keeps a mapping of all the users that completed the challenge (usin
 
  ## Mint a Remixer Badge using the generated proof
 
- - Switch to the Optimism network. (Make sure in the Deploy & Run you are connected to Optimism and that your browser wallet (often MetaMask) is also coneected there).
+ - Switch to the Optimism network. Make sure that in the Deploy & Run plugin, you are connected to Optimism and that your browser wallet (often MetaMask) is also connected there and that you have enough ETH to pay for the minting (usually about 40 cents).
  - Open the file scripts/publish-solution.ts.
  - This script will use the proof generated in the previous section `generated/proof.json` for calling the function `publishChallenge` in the Remix Rewards contract.
  - Run the transaction for publishing the solution.
