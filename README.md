@@ -1,12 +1,12 @@
 ## Introduction
 
- Remix Challenges is an onchain quiz that uses a zk proof.  People submitting their answers won't reveal their solutions.
+ Remix Challenges is an onchain quiz that uses a zk proof.  People submitting answers won't reveal their solutions.
 
   - Why not just code the challenge in Solidity?
   
  All the data in the Ethereum blockchain is public and visible. This means that if the challenge is coded in Solidity, the first user who finds the solution will submit that solution in **a transaction** and thus the solution will be visible by everyone.
 
- Using zk proof, we only require the user post a proof that the challenge has been successfully completed.
+ Using zk proof, we only require the user post a **proof** that the challenge has been successfully completed.
 
   - Is it possible to double post the same proof?
 
@@ -26,21 +26,21 @@ The contract keeps a mapping of all the users that completed the challenge (usin
  
  ## Completing the challenge
 
- - clone the following repository in remix `https://github.com/yann300/remix-challenges` .
- - open the file './src/script/compute.ts'.
- - choose value for the inputs and run the script.
- - if the program execute correctly this means that you successfully found the 4 answers.
- - this will also log a proof in the terminal and will save it in a file in the folder named **generated**.
- - this proof can be used in a verifier to prove that you found the 4 values. By doing so, only the proof needs to be shared, you then don't need to share the 4 values, but everyone can be certain that you know these values.
- - go to the next steps.
+ - Clone the following repository in Remix `https://github.com/yann300/remix-challenges` .
+ - Open the file './src/script/compute.ts'.
+ - Choose value for the inputs and run the script.
+ - If the program execute correctly this means that you successfully found the 4 answers.
+ - This will also log a proof in the terminal and will save it in a file in the folder named **generated**.
+ - This proof can be used in a verifier to prove that you found the 4 values. By doing so, only the proof needs to be shared, you then don't need to share the 4 values, but everyone can be certain that you know these values.
+ - Go to the next steps.
 
- ## Mint a remixer using the generated proof
+ ## Mint a Remixer Badge using the generated proof
 
- - switch to the Optimism network.
- - open the file scripts/publish-solution.ts.
- - this call use the proof generated in the previous step `proof.json` for calling the function `publishChallenge` from the remix rewards contract.
- - run the transaction for publishing the solution.
- - once the solution has been published head to https://rewards.remix.ethereum.eth.limo to see the newly created badge.
+ - Switch to the Optimism network.
+ - Open the file scripts/publish-solution.ts.
+ - This call use the proof generated in the previous step `proof.json` for calling the function `publishChallenge` from the Remix Rewards contract.
+ - Run the transaction for publishing the solution.
+ - Once the solution has been published head to https://rewards.remix.ethereum.eth.limo to see the newly created badge.
 
 
 
