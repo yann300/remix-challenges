@@ -39,22 +39,26 @@ const run = async (inputs: Array<string>) => {
     remix.call('fileManager', 'writeFile', './generated/proof.json', params)
 }
 
-/*
- nullifier is a ramdom value. Please put in any number. It is used to avoid double spending the proof.
- hash_a and hasb_b are provided during the game session.
- question_1 to question_4 are the solution to the game.
-*/
-const nullifier = "42" // random, please update this value.
-
 // the hashes a & b are the split hashes of the correct answers
 const hash_a = "116575509912205036097134680835176937883"
 const hash_b = "58593660297307654186580201841686965660"
 
-const question_1 = normalize("")
-const question_2 = normalize("")
-const question_3 = normalize("")
-const question_4 = normalize("")
-const input = pack(question_1 + question_2 + question_3 + question_4)
+////////////////////////////////// Remix Challenge ///////////////////////////////
+
+/*
+ nullifier is a random value. Please put in any number. It is used to avoid double spending the proof.
+ answer_1 to answer_4 are the solution to the game.
+*/
+const nullifier = "42" // Please update this to any random value
+
+const answer_1 = normalize("") // Put the answer within quotes e.g; normalize("answer_1")
+const answer_2 = normalize("")
+const answer_3 = normalize("")
+const answer_4 = normalize("")
+
+//////////////////////////////////////////////////////////////////////////////////
+
+const input = pack(answer_1 + answer_2 + answer_3 + answer_4)
 const inputs: Array<string> = input.concat([hash_a, hash_b, nullifier])
 
 run(inputs)
