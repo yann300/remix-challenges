@@ -27,7 +27,7 @@ const run = async (inputs: Array<string>) => {
 
     // retrieve the verification key
     console.log('loading keypair.json... this will take some time.')
-    let keypair = await fetch('https://raw.githubusercontent.com/yann300/remix-challenges/master/generated/keypair.json')
+    let keypair = await fetch('https://raw.githubusercontent.com/yann300/remix-challenges/keypair.json/generated/keypair.json')
     keypair = await keypair.json()
 
     console.log('generate proof...')
