@@ -11,7 +11,7 @@ const run = async (inputs: Array<string>) => {
     // compilation
     const artifacts = zokratesProvider.compile(source);
 
-    console.log('compute program... this might take some time.')
+    console.log('compute program... this will take some time.')
     // computation
 
     let witness
@@ -26,7 +26,9 @@ const run = async (inputs: Array<string>) => {
     
 
     // retrieve the verification key
-    const keypair = JSON.parse(await remix.call('fileManager', 'readFile', './generated/keypair.json'))
+    console.log('loading keypair.json... this will take some time.')
+    let keypair = await fetch('https://raw.githubusercontent.com/yann300/remix-challenges/keypair.json/generated/keypair.json')
+    keypair = await keypair.json()
 
     console.log('generate proof...')
     // generate proof
