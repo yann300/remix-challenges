@@ -28,16 +28,18 @@ The contract keeps a mapping of all the users that completed the challenge (usin
  ### Setup
 
  - Clone the following repository in Remix `https://github.com/yann300/remix-challenges`.
+ 
    - In Remix, to find the **clone** option, go to the hamburger menu at the top of the File Explorer.
+   
  - Once the cloned repo has been retrieved, open the file, **compute.ts**, which is in the **scripts** folder.
  - On line 54 of compute.ts, choose a random number for the nullifier.  Replace the example nullifier.
   ### Answering the questions
  - Starting on line 56 of compute.ts, input the answers to the questions.
  - Run the script by either right-clicking on the script in the File Explorer or clicking on the green play button.
  - If the program executes correctly, you have successfully answered the 4 questions.
- - 
+
    - In Remix's terminal, you'll see a log of the proof.  The script will save this proof in a file in the folder named **generated**.
-   - 
+ 
  - **If you have not answered the questions correctly**, the proof will NOT be generated and the file `generated/proof.json` will not be created.
  - This proof can be used in a **verifier** to prove that you found the 4 values. By doing so, only the proof needs to be shared, you don't need to share the 4 values, but everyone can be certain that you know these values.
  - Go to the next steps.
