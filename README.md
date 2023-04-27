@@ -27,7 +27,8 @@ The contract keeps a mapping of all the users that completed the challenge (usin
  ## Completing the challenge
  ### Setup
 
- - Clone the following repository in Remix `https://github.com/yann300/remix-challenges` .
+ - Clone the following repository in Remix `https://github.com/yann300/remix-challenges`.
+  - In Remix, to find the **clone** option, go to the hamburger menu at the top of the File Explorer.
  - Open the file './src/script/compute.ts'.
  - On line 54 of compute.ts, choose at random a new nullifier.
   ### Answering the questions
