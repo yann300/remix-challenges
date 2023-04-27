@@ -35,7 +35,7 @@ The contract keeps a mapping of all the users that completed the challenge (usin
  - Run the script by either Rt-clicking on the script in the File Explorer or clicking on the green play button.
  - If the program executes correctly, you have successfully found the 4 answers.
  - In Remix's terminal, you'll see a log of the proof.  The script will save this proof in a file in the folder named **generated**.
- - If you have not answered the questions correctly, the proof will NOT be generated and the file `generated/proof.json` will not be created.
+ - **If you have not answered the questions correctly**, the proof will NOT be generated and the file `generated/proof.json` will not be created.
  - This proof can be used in a **verifier** to prove that you found the 4 values. By doing so, only the proof needs to be shared, you don't need to share the 4 values, but everyone can be certain that you know these values.
  - Go to the next steps.
 
