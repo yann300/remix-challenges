@@ -29,7 +29,7 @@ The contract keeps a mapping of all the users that completed the challenge (usin
 
  - Clone the following repository in Remix `https://github.com/yann300/remix-challenges` .
  - Open the file './src/script/compute.ts'.
- - On line 54 of compute.ts, put a new nullifier.
+ - On line 54 of compute.ts, choose at random a new nullifier.
   ### Answering the questions
  - Starting on line 56 of compute.ts, put the answers to the questions.
  - Run the script by either Rt-clicking on the script in the File Explorer or clicking on the green play button.
