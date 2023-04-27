@@ -35,7 +35,7 @@ The contract keeps a mapping of all the users that completed the challenge (usin
  - On line 54 of compute.ts, choose a random number for the nullifier.  Replace the example nullifier.
   ### Answering the questions
  - Starting on line 56 of compute.ts, input the answers to the questions.
- - Run the script by either Rt-clicking on the script in the File Explorer or clicking on the green play button.
+ - Run the script by either right-clicking on the script in the File Explorer or clicking on the green play button.
  - If the program executes correctly, you have successfully found the 4 answers.
  - In Remix's terminal, you'll see a log of the proof.  The script will save this proof in a file in the folder named **generated**.
  - **If you have not answered the questions correctly**, the proof will NOT be generated and the file `generated/proof.json` will not be created.
