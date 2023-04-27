@@ -31,7 +31,7 @@ The contract keeps a mapping of all the users that completed the challenge (usin
  
    - In Remix, to find the **clone** option, go to the hamburger menu at the top of the File Explorer.
   
- - Once the cloned repo has been retrieved, open the file, **compute.ts**, which is in the scripts folder.
+ - Once the cloned repo has been retrieved, open the file, **compute.ts**, which is in the **scripts** folder.
  - On line 54 of compute.ts, choose at random a new nullifier.
   ### Answering the questions
  - Starting on line 56 of compute.ts, input the answers to the questions.
