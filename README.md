@@ -25,14 +25,18 @@ If a user correctly answers the questions and uses "142 as the nullifier when ge
 The contract keeps a mapping of all the users that completed the challenge (using `msg.sender`), it is also possible to ask for a signed nullifier instead of directly using `msg.sender`
  
  ## Completing the challenge
+ ### Setup
 
  - Clone the following repository in Remix `https://github.com/yann300/remix-challenges` .
  - Open the file './src/script/compute.ts'.
- - Choose value for the inputs and run the script. (To run it either Rt click on the script in the File Explorer or click the green play button)
- - If the program executes correctly, you successfully found the 4 answers.
- - In Remix's terminal, you'll see log a proof.  The script will save this proof in a file in the folder named **generated**.
- - If you have not answered the questions correctly, the proof will NOT be generated (and the file `generated/proof.json` will not be created.
- - This proof can be used in a verifier to prove that you found the 4 values. By doing so, only the proof needs to be shared, you don't need to share the 4 values, but everyone can be certain that you know these values.
+ - On line 54 of compute.ts, put a new nullifier.
+  ### Answering the questions
+ - Starting on line 56 of compute.ts, put the answers to the questions.
+ - Run the script by either Rt-clicking on the script in the File Explorer or clicking on the green play button.
+ - If the program executes correctly, you have successfully found the 4 answers.
+ - In Remix's terminal, you'll see a log of the proof.  The script will save this proof in a file in the folder named **generated**.
+ - If you have not answered the questions correctly, the proof will NOT be generated and the file `generated/proof.json` will not be created.
+ - This proof can be used in a **verifier** to prove that you found the 4 values. By doing so, only the proof needs to be shared, you don't need to share the 4 values, but everyone can be certain that you know these values.
  - Go to the next steps.
 
  ## Mint a Remixer Badge using the generated proof
