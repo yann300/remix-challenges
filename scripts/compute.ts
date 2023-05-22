@@ -42,8 +42,8 @@ const run = async (inputs: Array<string>) => {
 }
 
 // the hashes a & b are the split hashes of the correct answers
-const hash_a = "319390064091566492203539982946336530921"
-const hash_b = "285568343093385201251220858074448904541"
+const hash_a = "213863760618710752109218276139978303767"
+const hash_b = "102783589979962055318904197462819597952"
 
 ////////////////////////////////// Remix Challenge ///////////////////////////////
 
