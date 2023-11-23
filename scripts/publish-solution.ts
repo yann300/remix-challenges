@@ -1,4 +1,5 @@
 import { ethers } from 'ethers'
+import { challenges } from '../challenges'
 
 async function main() {
     try {        
@@ -14,11 +15,16 @@ async function main() {
         // to instantiate an ethers.Contract object.
         let contract = new ethers.Contract(address, JSON.parse(abi), signer);
 
-        const proof = JSON.parse(await remix.call('fileManager', 'readFile', './generated/proof.json'))
+        const proof = JSON.parse('[' + await remix.call('fileManager', 'readFile', 'zk/proof_calldata.json') + ']')
         
         console.log(proof)
         console.log('publishing the solution...')
-        const txSafeMint = await contract.publishChallenge(proof[0], proof[1])
+        let proofStruct = {
+            a: proof[0],
+            b: proof[1],
+            c: proof[2]
+        }
+        const txSafeMint = await contract.publishChallenge(proofStruct, proof[3])
         
         // this wait for the transaction to be mined.
         const result = await txSafeMint.wait()

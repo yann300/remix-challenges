@@ -1,27 +1,14 @@
-import { initialize } from 'zokrates-js'
-import { normalize, pack } from './utils'
+import { poseidon } from "circomlibjs" // v0.0.8
+import { normalize } from "./utils"
 
-const run = async (inputs: Array<string>) => {
-    console.log('init...')
-    const zokratesProvider = await initialize()
-
-    // recompiling
-    const source = await remix.call('fileManager', 'readFile', './zokrates/hash.zok')
-
-    // compilation
-    const artifacts = zokratesProvider.compile(source);
-
-    console.log('compute program...')
-    // computation
-    const { output } = zokratesProvider.computeWitness(artifacts, inputs);
-    console.log(output)    
-}
-
-const message_1 = normalize("")
-const message_2 = normalize("")
-const message_3 = normalize("")
-const message_4 = normalize("")
-
-run(pack(message_1 + message_2 + message_3 + message_4))
-.catch((e: any) => console.log(e.message))
-
+(async () => {
+  try {
+    const value1 = normalize('answer 1')
+    const value2 = normalize('answer 2')
+    const value3 = normalize('answer 3')
+    const value4 = normalize('answer 4')
+    console.log(poseidon([value1, value2, value3, value4]))
+  } catch (e) {
+    console.error(e.message)
+  }
+})()
