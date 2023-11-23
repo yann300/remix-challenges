@@ -1,0 +1,80 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[2]",
+						"name": "_pA",
+						"type": "uint256[2]"
+					},
+					{
+						"internalType": "uint256[2][2]",
+						"name": "_pB",
+						"type": "uint256[2][2]"
+					},
+					{
+						"internalType": "uint256[2]",
+						"name": "_pC",
+						"type": "uint256[2]"
+					},
+					{
+						"internalType": "uint256[1]",
+						"name": "_pubSignals",
+						"type": "uint256[1]"
+					}
+				],
+				"name": "verifyProof",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/zk_verifier.sol": "Groth16Verifier"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/zk_verifier.sol": {
+			"keccak256": "0x2de52349e954746dd23d0e85448c7e4ee88fd516f7a3d62ceb9b7e8f1fc45af2",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d3811bcd0c06ef5b1dd2b014545fe22b1734e78765916fc785db84980a3a7fb6",
+				"dweb:/ipfs/QmdcY77cBhFw1YicUkwN42qxH15KDh9orZwwswAj4HaaBG"
+			]
+		}
+	},
+	"version": 1
+}
