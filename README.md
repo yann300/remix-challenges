@@ -31,24 +31,25 @@ The contract keeps a mapping of all the users that completed the challenge (usin
  
    - In Remix, to find the **clone** option, go to the hamburger menu at the top of the File Explorer.
    
- - Once the cloned repo has been retrieved, open the file, **compute.ts**, which is in the **scripts** folder.
- - On line 54 of compute.ts, choose a random number for the nullifier.  Replace the example nullifier.
+ - Once the cloned repo has been retrieved, open the file, **verify-solution.ts**, which is in the **scripts** folder.
+ 
   ### Answering the questions
- - Starting on line 56 of compute.ts, input the answers to the questions.
+ - Starting on line 73 of **verify-solution.ts**, input the answers to the questions.
  - Run the script by either right-clicking on the script in the File Explorer or clicking on the green play button.
  - If the program executes correctly, you have successfully answered the 4 questions.
 
-   - In Remix's terminal, you'll see a log of the proof.  The script will save this proof in a file in the folder named **generated**.
+ - In Remix's terminal, you'll see a log of the proof. The script will save this proof in the file named **zk/proof_calldata.json**.
  
- - **If you have not answered the questions correctly**, the proof will NOT be generated and the file `generated/proof.json` will not be created.
+ - **If you have not answered the questions correctly**, the proof will NOT be generated and the file **zk/proof_calldata.json** will not be created.
  - This proof can be used in a **verifier** to prove that you found the 4 values. By doing so, only the proof needs to be shared, you don't need to share the 4 values, but everyone can be certain that you know these values.
  - Go to the next steps.
 
  ## Mint a Remixer Badge using the generated proof
 
+ - Now that you have a proof, you can publish the proof onchain and mint a remixer badge.
  - Switch to the Optimism network. Make sure that in the Deploy & Run plugin, you are connected to Optimism and that your browser wallet (often MetaMask) is also connected there and that you have enough ETH to pay for the minting (usually about 40 cents).
  - Open the file scripts/publish-solution.ts.
- - This script will use the proof generated in the previous section `generated/proof.json` for calling the function `publishChallenge` in the Remix Rewards contract.
+ - This script will use the proof generated in the previous section **zk/proof_calldata.json** for calling the function `publishChallenge` in the Remix Rewards contract.
  - Run the transaction for publishing the solution.
  - Once the solution has been published head to https://rewards.remix.ethereum.eth.limo to see the newly created badge.
 
