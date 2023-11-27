@@ -18,12 +18,29 @@ template CalculateHash() {
 
     out <== poseidon.out;
 }
+
+template CalculateNullifierHash() {
+    signal input externalNullifier;
+
+    signal output out;
+
+    component poseidon = Poseidon(1);
+
+    poseidon.inputs[0] <== externalNullifier;
+
+    out <== poseidon.out;
+}
+
 template HashChecker() {
     signal input value1;
     signal input value2;
     signal input value3;
     signal input value4;
     signal input hash;
+
+    signal input externalNullifier;
+
+    signal output nullifierHash;
 
     component calculateSecret = CalculateHash();
     calculateSecret.value1 <== value1;
@@ -34,8 +51,14 @@ template HashChecker() {
     signal calculatedHash;
     calculatedHash <== calculateSecret.out;
 
+    component calculateNullifierHash = CalculateNullifierHash();
+    calculateNullifierHash.externalNullifier <== externalNullifier;
+
+    // prevent double signaling
+    nullifierHash <== calculateNullifierHash.out;
+
     assert(hash == calculatedHash);
     
 }
 
-component main {public [hash]} = HashChecker();
+component main {public [hash, externalNullifier]} = HashChecker();
