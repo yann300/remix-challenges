@@ -54,12 +54,12 @@ const main = async (value1, value2, value3, value4) => {
     console.log('prove')
     const { proof, publicSignals } = await snarkjs.groth16.prove(zkey_final, wtns);
     
-    console.log('nullifier hash:', publicSignals[0])
-    console.log('challenge hash:', publicSignals[1])
-    console.log('nullifier:', publicSignals[2])
+    console.log('out - nullifier hash:', publicSignals[0])
+    console.log('in - challenge hash:', publicSignals[1])
+    console.log('in - nullifier:', publicSignals[2])
     const verified = await snarkjs.groth16.verify(vKey, publicSignals, proof, logger);
 
-    const calldata = await snarkjs.groth16.exportSolidityCallData(proof, [publicSignals[0], publicSignals[1]])
+    const calldata = await snarkjs.groth16.exportSolidityCallData(proof, publicSignals)
     console.log('calldata', calldata)
     remix.call('fileManager', 'writeFile', 'zk/proof.json', JSON.stringify(proof, null, '\t'))    
     remix.call('fileManager', 'writeFile', 'zk/proof_calldata.json', JSON.stringify(JSON.parse('[' + calldata + ']'), null, '\t'))
