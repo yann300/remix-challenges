@@ -9,13 +9,13 @@ async function main() {
         // "signer" represents the current selected account and provider.
         const signer = (new ethers.providers.Web3Provider(web3Provider)).getSigner()
 
-        const abi = await remix.call('fileManager', 'readFile', 'scripts/contract-rewards.abi')
+        const abi = await remix.call('fileManager', 'readFile', 'abi/contract-rewards.abi')
         
         // we finally use the address, the contract interfact and the current context (provider and account)
         // to instantiate an ethers.Contract object.
         let contract = new ethers.Contract(address, JSON.parse(abi), signer);
 
-        const proof = JSON.parse('[' + await remix.call('fileManager', 'readFile', 'zk/proof_calldata.json') + ']')
+        const proof = JSON.parse(await remix.call('fileManager', 'readFile', 'zk/proof_calldata.json'))
         
         console.log(proof)
         console.log('publishing the solution...')
