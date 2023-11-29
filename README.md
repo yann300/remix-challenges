@@ -34,7 +34,7 @@ The contract keeps a mapping of all the users that completed the challenge (usin
  - Once the cloned repo has been retrieved, open the file, **verify-solution.ts**, which is in the **scripts** folder.
  
   ### Answering the questions
- - Starting on line 73 of **verify-solution.ts**, input the answers to the questions.
+ - Starting on line 76 of **verify-solution.ts**, input the answers to the questions.
  - Run the script by either right-clicking on the script in the File Explorer or clicking on the green play button.
  - If the program executes correctly, you have successfully answered the 4 questions.
 

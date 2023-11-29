@@ -1,5 +1,5 @@
 import { poseidon } from "circomlibjs" // v0.0.8
-import { normalize } from "./utils"
+import { normalize } from "../setup/utils"
 import { challenges } from '../challenges'
 import { ZqField } from 'ffjavascript'
 const SNARK_FIELD_SIZE = BigInt('21888242871839275222246405745257275088548364400416034343698204186575808495617')
