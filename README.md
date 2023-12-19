@@ -12,13 +12,14 @@
 
 There are 2 parts to this question - can the same person (address) post the same proof?  And can a different address post the same proof?
 
-Incorporated in the proof is a special parameter named `nullifier` - a number that a user chooses and inputs when generating the proof. Inputting a different nullifier with the correct answers will generate a different proof.
+Incorporated in the proof is a special parameter named `externalNullifier` - a number generated from a timestamp. 
+If a different value is used in the nullifier, then a different proof will be generated, but it will still show that the questions were correctly answered. 
 
-If a user correctly answers the questions and uses "142 as the nullifier when generating the proof, the smart contract will remember that the nullifier `142` has been used.  If another number is used, the proof will be different but will still show that the questions were correctly answered.
+The smart contract used for verifying the proof will remember the nullifier.  
 
- So even when the actual proof becomes public, it won't be possible to re-post that specific proof.  
+An address (a user) can only submit a single proof - even if another `nullifier` is used.  And a `nullifier` can only be used once.
 
- An address (a user) can only submit a single proof - even if another `nullifier` is used.  And a `nullifier` can only be used once.
+So even when the actual proof becomes public, it won't be possible to re-post that specific proof.  
 
   - If a user knows how to complete a challenge, can he compute with another salt and win the game again?
 
