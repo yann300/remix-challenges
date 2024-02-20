@@ -1,10 +1,11 @@
 import { ethers } from 'ethers'
 import { challenges } from '../challenges'
+import { getRewardAddress } from './contract_addresses'
 
 async function main() {
     try {        
-        // rewards contract on Optimism.
-        const address = "0x5d470270e889b61c08C51784cDC73442c4554011"
+        // rewards contract
+        const address = await getRewardAddress()
 
         // "signer" represents the current selected account and provider.
         const signer = (new ethers.providers.Web3Provider(web3Provider)).getSigner()
